@@ -80,16 +80,7 @@ Or with yarn:
 yarn install
 ```
 
-### 3. Environment Variables (Optional)
-
-If you're using Supabase for the contact form, create a `.env` file in the root directory:
-
-```env
-VITE_SUPABASE_URL=your_supabase_url
-VITE_SUPABASE_ANON_KEY=your_supabase_anon_key
-```
-
-### 4. Start Development Server
+### 3. Start Development Server
 
 ```bash
 npm run dev
@@ -254,67 +245,6 @@ To modify testimonials in `src/components/Testimonials.tsx`:
 
 2. **Update** the contact form submission endpoint in `Contact.tsx` if using a different backend
 
-3. **Supabase Configuration:** Update environment variables in `.env`
-
-## 🚀 Deployment
-
-### Deploy to Vercel (Recommended)
-
-1. **Install Vercel CLI:**
-```bash
-npm install -g vercel
-```
-
-2. **Login:**
-```bash
-vercel login
-```
-
-3. **Deploy:**
-```bash
-vercel
-```
-
-4. **Production deployment:**
-```bash
-vercel --prod
-```
-
-### Deploy to Netlify
-
-1. **Build the project:**
-```bash
-npm run build
-```
-
-2. **Install Netlify CLI:**
-```bash
-npm install -g netlify-cli
-```
-
-3. **Deploy:**
-```bash
-netlify deploy --prod --dir=dist
-```
-
-### Deploy to GitHub Pages
-
-1. **Install gh-pages:**
-```bash
-npm install --save-dev gh-pages
-```
-
-2. **Add to package.json scripts:**
-```json
-"scripts": {
-  "deploy": "vite build && gh-pages -d dist"
-}
-```
-
-3. **Deploy:**
-```bash
-npm run deploy
-```
 
 ## 📤 Git Workflow - Push to Master Branch
 
@@ -494,15 +424,7 @@ npm run lint
 
 For issues or questions:
 - Open an issue on GitHub
-- Contact: [Your Email]
-- Website: [Your Live URL]
-
-## 📄 License
-
-This project is private and proprietary. All rights reserved.
-
----
-
-**Built with ❤️ by Sando Varghese Manavalan**
+- Contact: 
+- Website: 
 
 *Last Updated: December 2025*
