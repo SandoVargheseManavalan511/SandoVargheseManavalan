@@ -32,6 +32,12 @@ const services = [
     icon: Shield,
     color: 'blue',
   },
+  {
+    title: 'Fake Account Removal',
+    description: 'Did someone created your fake account? Don’t worry I will delete it within 24 hours.',
+    icon: Shield,
+    color: 'blue',
+  },
 ];
 
 export default function Hero() {
