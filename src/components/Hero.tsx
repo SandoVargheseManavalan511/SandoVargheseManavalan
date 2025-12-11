@@ -34,7 +34,7 @@ const services = [
   },
   {
     title: 'Fake Account Removal',
-    description: 'Did someone created your fake account? Don’t worry I will delete it within 24 hours.',
+    description: 'Did someone create a fake account of you? Don’t worry. I’ll get it removed within 24 hours.Did someone created your fake account? Don’t worry I will delete it within 24 hours.',
     icon: Shield,
     color: 'blue',
   },
