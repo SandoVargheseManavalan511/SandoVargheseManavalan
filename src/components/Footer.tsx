@@ -84,11 +84,11 @@ export default function Footer() {
         </div>
 
         <div className="pt-8 border-t border-gray-800">
-          <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
+          <div className="flex flex-col md:flex-row justify-center items-center space-y-4 md:space-y-0">
             <a href="https://kodryx.ai/" target="_blank" rel="noopener noreferrer" className="text-gray-400 text-sm text-center md:text-left">
               © {currentYear} Kodryx AI Product. All rights reserved.
             </a>
-            <div className="flex items-center space-x-2">
+            {/*<div className="flex items-center space-x-2">
               
               <Mail className="w-4 h-4 text-gray-400 text-sm font-mono"/> 
               <a href='mailto:contact@kodryx.ai' className="text-gray-400 text-sm font-mono">contact@kodryx.ai</a>
@@ -102,7 +102,7 @@ export default function Footer() {
 
               <MapPin className="w-4 h-4 text-gray-400 text-sm font-mono"/> 
               <span className="text-gray-400 text-sm font-mono">Hyderabad, 500032, India</span>
-            </div>
+            </div>*/}
           </div>
         </div>
       </div>
