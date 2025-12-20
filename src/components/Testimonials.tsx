@@ -23,11 +23,11 @@ const testimonials = [
     avatar: 'RP',
   },
   {
-    name: 'David Martinez',
-    role: 'Freelancer',
-    text: 'Recovered my disabled Instagram account when I thought it was gone forever. Nikhil is a lifesaver!',
+    name: 'Saroja Lokesh',
+    role: 'User',
+    text: 'I am extremely grateful to Mr. Sando Varghese for his quick and professional support in recovering my hacked WhatsApp account. The issue was resolved within just 10 minutes, which truly reflects his expertise and efficiency. His prompt response and strong knowledge in cyber recovery made the entire process smooth and stress-free. Mr. Sando Varghese is a reliable recovery specialist and a great support for anyone facing cyber-related issues.',
     rating: 5,
-    avatar: 'DM',
+    avatar: 'SL',
   },
   {
     name: 'Emma Wilson',
