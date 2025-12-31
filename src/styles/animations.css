@@ -141,3 +141,24 @@
     transform: translateY(0);
   }
 }
+
+/* Reduce animation load on small screens and for reduced-motion preferences */
+@media (max-width: 640px), (prefers-reduced-motion: reduce) {
+  .cyber-grid {
+    animation: none;
+  }
+
+  .animate-float,
+  .animate-pulse-glow,
+  .animate-neon-pulse,
+  .animate-border-glow,
+  .animate-scan,
+  .animate-glitch {
+    animation: none !important;
+  }
+
+  .glass-morphism,
+  .glass-morphism1 {
+    backdrop-filter: blur(6px);
+  }
+}

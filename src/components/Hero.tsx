@@ -71,9 +71,9 @@ export default function Hero() {
 
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-      <div className="absolute inset-0 cyber-grid opacity-20"></div>
+      <div className="absolute inset-0 cyber-grid opacity-20 hidden sm:block"></div>
 
-      <div className="absolute inset-0">
+      <div className="absolute inset-0 hidden sm:block">
         {[...Array(20)].map((_, i) => (
           <div
             key={i}
