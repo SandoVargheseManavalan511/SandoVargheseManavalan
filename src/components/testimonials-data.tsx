@@ -18,6 +18,15 @@ export const testimonials = [
         year: 2025,
     },
     {
+        name: 'Satyanarayana Ravipati',
+        role: 'User',
+        videoUrl: 'https://res.cloudinary.com/dqqq1vrba/video/upload/v1768357587/Hi_Sando_Varghese_I_just_wanted_to_express_my_heartfelt_gratitude_for_recovering_my_hacked_What_b33jee.mp4',
+        text: 'I just wanted to express my heartfelt gratitude for recovering my hacked WhatsApp account in just a few hours! Your expertise and prompt assistance are truly impressive. Thank you so much for your help! I’m really grateful for your services.',
+        rating: 5,
+        avatar: 'SR',
+        year: 2025,
+    },
+    {
         name: 'Bipin Bakshi',
         role: 'Senior Millitary Officer',
         text: 'Happy to inform Mr Sando, Cyber Crime Intervention Officier(CCIO) helped me to resolve the Fake Profile issue where an impostr had copied my photos, and was contacting my known security persons who were with me in Indian Army or NSG. With his help I was able to correctly report the problem and get the fake account blocked. Thanks to Sando whom I could contact through ISAC Foundation and CopConnect, he did the role of Cyber Crime First Responder. As a senior millitary officer, my profile was beign used for fake messages about some financial dealings, that has been prevented!',
