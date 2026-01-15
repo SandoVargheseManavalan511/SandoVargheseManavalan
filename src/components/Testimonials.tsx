@@ -1,57 +1,17 @@
-import { Star, User } from 'lucide-react';
+import { Star } from 'lucide-react';
+import { useState } from 'react';
+import TruncatedText from './TruncatedText';
+import AllTestimonialsModal from './AllTestimonialsModal';
+import { testimonials } from './testimonials-data';
 
-const testimonials = [
-  {
-    name: 'Bipin Bakshi',
-    role: 'Senior Millitary Officer',
-    text: 'Happy to inform Mr Sando, Cyber Crime Intervention Officier(CCIO) helped me to resolve the Fake Profile issue where an impostr had copied my photos, and was contacting my known security persons who were with me in Indian Army or NSG. With his help I was able to correctly report the problem and get the fake account blocked. Thanks to Sando whom I could contact through ISAC Foundation and CopConnect, he did the role of Cyber Crime First Responder. As a senior millitary officer, my profile was beign used for fake messages about some financial dealings, that has been prevented!',
-    rating: 5,
-    avatar: 'BB',
-    year: 2024,
-  },
-  {
-    name: 'Kowork.co.im',
-    role: 'Business',
-    text: 'I\'m thrilled to share my experience with Mr Sando Varghese, a WhatsApp recovery specialist who helped me regain acess to my hacked account. After falling victim to a hacking incident, I was introduced to Mr Sando Varghese through a trusted source. His professionalism, expertise, and dedication were evident from our first interaction. He guided me through the recovery process with patience and clarity, ensuring I understood each step. Thanks to his efforts, I successfully regained access to my WhatsApp account without any data loss. I highly recommend Mr Sando Varghese by a friend, and I\'m grateful for the recommendation that led me to his exceptional services. His expertise has saved me from potential harassment and identify theft. If you\'re looking for a reliable and skilled professional to assist with WhatsApp recovery, Mr Sando Varghese is the person to contact.',
-    rating: 5,
-    avatar: 'KC',
-    year: 2024,
-  },
-  {
-    name: 'Raj Patel',
-    role: 'Senior Citizen',
-    text: 'Yesterday evening, I received a message from a friend asking me to forward a six-digit SMS code via WhatsApp. I complied-and that was all it took for my account to be hacked. I was locked out and unable to generate new codes, while calls and texts continued going out from my number. By this morning, nearly a dozen friends had called me in confusion, and I had to tell them not to answer or forward anything from my account. Then with a reference I approached ISAC CCIO Mr Sando Varghese. He Solved my issue at the earliest. I am a Senior Citizen and not well versed with WhatsApp issues. But Mr Sando Varghese made it so simple for me and recovered my WhatsApp account without any data loss. I am very grateful to him and ISAC Foundation for their support.',
-    rating: 5,
-    avatar: 'RP',
-    year: 2025,
-  },
-  {
-    name: 'Saroja Lokesh',
-    role: 'User',
-    text: 'I am extremely grateful to Mr. Sando Varghese for his quick and professional support in recovering my hacked WhatsApp account. The issue was resolved within just 10 minutes, which truly reflects his expertise and efficiency. His prompt response and strong knowledge in cyber recovery made the entire process smooth and stress-free. Mr. Sando Varghese is a reliable recovery specialist and a great support for anyone facing cyber-related issues.',
-    rating: 5,
-    avatar: 'SL',
-    year: 2025,
-  },
-  {
-    name: 'Emma Wilson',
-    role: 'Marketing Manager',
-    text: 'Excellent data recovery service. Retrieved all my important files from a broken Android device. 100% satisfied!',
-    rating: 5,
-    avatar: 'EW',
-    year: 2024,
-  },
-  {
-    name: 'Raj Patel',
-    role: 'Software Engineer',
-    text: 'Bypass FRP lock on my Samsung device. Quick, professional, and secure service. Will definitely use again!',
-    rating: 5,
-    avatar: 'RP',
-    year: 2024,
-  },
-];
+
 
 export default function Testimonials() {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  // Show only first 3 testimonials initially
+  const initialTestimonials = testimonials.slice(0, 3);
+
   return (
     <section id="testimonials" className="relative py-20 sm:py-32 overflow-hidden">
       <div className="absolute inset-0 bg-gradient-to-b from-black via-gray-900 to-black"></div>
@@ -63,21 +23,30 @@ export default function Testimonials() {
             <span className="text-cyan-400 font-mono text-sm tracking-wider">{'>'} CLIENT_FEEDBACK</span>
           </div>
           <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-6">
-            <span >Client Testimonials</span>
+            <span>Client Testimonials</span>
           </h2>
-          <p className="text-xl text-gray-400 max-w-3xl mx-auto">
-            Real results from satisfied clients worldwide
-          </p>
+          <div className="flex items-center justify-center gap-4 flex-wrap">
+            <p className="text-xl text-gray-400 max-w-3xl">
+              Real results from satisfied clients worldwide
+            </p>
+            <button
+              onClick={() => setIsModalOpen(true)}
+              className="px-6 py-2 bg-gradient-to-r from-cyan-500 to-blue-600 text-white font-semibold rounded-lg hover:from-cyan-400 hover:to-blue-500 transition-all duration-300 shadow-lg hover:shadow-cyan-400/50 border border-cyan-400/30"
+            >
+              Show All
+            </button>
+          </div>
         </div>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {testimonials.map((testimonial, index) => (
+          {initialTestimonials.map((testimonial, index) => (
             <div
               key={index}
-              className="glass-morphism rounded-xl p-6 border border-cyan-400/30 hover:border-cyan-400 transition-all duration-300 hover:scale-105 group"
+              className="flex flex-col justify-between glass-morphism rounded-xl p-6 border border-cyan-400/30 hover:border-cyan-400 transition-all duration-300 hover:scale-105 group"
               style={{ animationDelay: `${index * 0.1}s` }}
             >
-              <div className="flex items-center space-x-4 mb-4">
+              <div>
+                <div className="flex items-center space-x-4 mb-4">
                 <div className="w-14 h-14 flex items-center justify-center rounded-full bg-gradient-to-br from-cyan-500 to-blue-600 border-2 border-cyan-400 group-hover:animate-pulse-glow">
                   <span className="text-white font-bold text-lg">{testimonial.avatar}</span>
                 </div>
@@ -93,13 +62,45 @@ export default function Testimonials() {
                 ))}
               </div>
 
-              <p className="text-gray-300 leading-relaxed">"{testimonial.text}"</p>
+              {/* Content: Text, Image, or Video */}
 
-              <div className="mt-4 pt-4 border-t border-gray-700">
+              {testimonial.imageUrl && (
+                <div className="rounded-lg overflow-hidden border border-cyan-400/30 mx-auto max-w-xs">
+                  <img 
+                    src={testimonial.imageUrl} 
+                    alt={`Testimonial from ${testimonial.name}`}
+                    className="w-full h-auto object-cover"
+                    // style={{ aspectRatio: '9/16' }}
+                    />
+                </div>
+              )}
+              {testimonial.text && (
+                <TruncatedText text={testimonial.text} maxWords={50} />
+              )}
+
+              {testimonial.videoUrl && (
+                <div className="rounded-lg overflow-hidden border border-cyan-400/30 mx-auto max-w-xs">
+                  <video 
+                    controls
+                    className="w-full h-auto"
+                    // style={{ aspectRatio: '9/16' }}
+                    // poster={testimonial.videoUrl.replace(/\.(mp4|webm|ogg)$/, '-poster.jpg')}
+                    preload="metadata"
+                  >
+                    <source src={testimonial.videoUrl} type="video/mp4" />
+                    Your browser does not support the video tag.
+                  </video>
+                </div>
+              )}
+              </div>
+
+              <div>
+                <div className="mt-4 pt-4 border-t border-gray-700">
                 <div className="flex items-center justify-between text-sm">
                   <span className="text-green-400 font-semibold">✓ Verified Client</span>
                   <span className="text-gray-500 font-mono">{testimonial.year}</span>
                 </div>
+              </div>
               </div>
             </div>
           ))}
@@ -124,6 +125,13 @@ export default function Testimonials() {
           </div>
         </div>
       </div>
+
+      {/* All Testimonials Modal */}
+      <AllTestimonialsModal 
+        isOpen={isModalOpen}
+        onClose={() => setIsModalOpen(false)}
+        testimonials={testimonials}
+      />
     </section>
   );
 }

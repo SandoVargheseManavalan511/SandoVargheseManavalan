@@ -12,7 +12,7 @@ function App() {
     <div className="relative min-h-screen bg-black">
       <CyberBackground />
       <Navbar />
-      <main className="relative z-10">
+      <main className="relative z-10 pt-[4.5rem]">
         <Hero />
         <Services />
         <About />

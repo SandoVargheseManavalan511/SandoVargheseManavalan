@@ -69,6 +69,7 @@ export default function Navbar() {
           </button>
         </div>
       </div>
+      
 
       {isMobileMenuOpen && (
         <div className="md:hidden glass-morphism border-t border-cyan-400/30">
@@ -93,6 +94,7 @@ export default function Navbar() {
           </div>
         </div>
       )}
+      <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-cyan-400 to-transparent opacity-50"></div>
     </nav>
   );
 }
