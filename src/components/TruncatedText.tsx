@@ -3,9 +3,10 @@ import { useState } from 'react';
 interface TruncatedTextProps {
   text: string;
   maxWords?: number;
+  bold?: boolean;
 }
 
-export default function TruncatedText({ text, maxWords = 200 }: TruncatedTextProps) {
+export default function TruncatedText({ text, maxWords = 200, bold = false }: TruncatedTextProps) {
   const [isExpanded, setIsExpanded] = useState(false);
 
   const words = text.split(' ');
@@ -16,7 +17,7 @@ export default function TruncatedText({ text, maxWords = 200 }: TruncatedTextPro
 
   return (
     <div>
-      <p className="text-gray-300 leading-relaxed">"{displayText}"</p>
+      <p className={`text-gray-300 leading-relaxed ${bold ? 'font-bold' : ''}`}>{displayText}</p>
       {shouldTruncate && (
         <button
           onClick={() => setIsExpanded(!isExpanded)}

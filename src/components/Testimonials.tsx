@@ -2,6 +2,7 @@ import { Star } from 'lucide-react';
 import { useState } from 'react';
 import TruncatedText from './TruncatedText';
 import AllTestimonialsModal from './AllTestimonialsModal';
+import ImageSlider from './ImageSlider';
 import { testimonials } from './testimonials-data';
 
 
@@ -10,7 +11,7 @@ export default function Testimonials() {
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   // Show only first 3 testimonials initially
-  const initialTestimonials = testimonials.slice(0, 3);
+  const initialTestimonials = testimonials.slice(0, 5);
 
   return (
     <section id="testimonials" className="relative py-20 sm:py-32 overflow-hidden">
@@ -52,30 +53,36 @@ export default function Testimonials() {
                 </div>
                 <div>
                   <h4 className="text-white font-bold">{testimonial.name}</h4>
-                  <p className="text-cyan-400 text-sm font-mono">{testimonial.role}</p>
+                  {/* <p className="text-cyan-400 text-sm font-mono">{testimonial.role}</p> */}
                 </div>
               </div>
 
-              <div className="flex items-center space-x-1 mb-4">
+              {/* <div className="flex items-center space-x-1 mb-4">
                 {[...Array(testimonial.rating)].map((_, i) => (
                   <Star key={i} className="w-5 h-5 text-yellow-400 fill-yellow-400" />
                 ))}
-              </div>
+              </div> */}
 
               {/* Content: Text, Image, or Video */}
 
-              {testimonial.imageUrl && (
-                <div className="rounded-lg overflow-hidden border border-cyan-400/30 mx-auto max-w-xs">
-                  <img 
-                    src={testimonial.imageUrl} 
-                    alt={`Testimonial from ${testimonial.name}`}
-                    className="w-full h-auto object-cover"
-                    // style={{ aspectRatio: '9/16' }}
-                    />
-                </div>
-              )}
               {testimonial.text && (
-                <TruncatedText text={testimonial.text} maxWords={50} />
+                <TruncatedText text={testimonial.text} maxWords={50} bold={index < 3} />
+              )}
+              {(testimonial.imageUrl || testimonial.imageUrls) && (
+                testimonial.imageUrls && testimonial.imageUrls.length > 0 ? (
+                  <ImageSlider 
+                    images={testimonial.imageUrls} 
+                    altText={`Testimonial from ${testimonial.name}`}
+                  />
+                ) : testimonial.imageUrl ? (
+                  <div className="rounded-lg overflow-hidden border border-cyan-400/30 mx-auto max-w-xs">
+                    <img 
+                      src={testimonial.imageUrl} 
+                      alt={`Testimonial from ${testimonial.name}`}
+                      className="w-full h-auto object-cover"
+                    />
+                  </div>
+                ) : null
               )}
 
               {testimonial.videoUrl && (
@@ -83,7 +90,7 @@ export default function Testimonials() {
                   <video 
                     controls
                     className="w-full h-auto"
-                    // style={{ aspectRatio: '9/16' }}
+                    style={{ aspectRatio: '9/16' }}
                     // poster={testimonial.videoUrl.replace(/\.(mp4|webm|ogg)$/, '-poster.jpg')}
                     preload="metadata"
                   >
