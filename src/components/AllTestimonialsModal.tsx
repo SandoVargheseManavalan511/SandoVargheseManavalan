@@ -2,14 +2,16 @@ import { useState, useEffect, useRef } from 'react';
 import { createPortal } from 'react-dom';
 import { X, Star } from 'lucide-react';
 import TruncatedText from './TruncatedText';
+import ImageSlider from './ImageSlider';
 
 interface Testimonial {
     name: string;
-    role: string;
+    // role: string;
     text?: string;
     imageUrl?: string;
+    imageUrls?: string[];
     videoUrl?: string;
-    rating: number;
+    // rating: number;
     avatar: string;
     year: number;
 }
@@ -103,30 +105,36 @@ export default function AllTestimonialsModal({ isOpen, onClose, testimonials }: 
                                         </div>
                                         <div>
                                             <h4 className="text-white font-bold">{testimonial.name}</h4>
-                                            <p className="text-cyan-400 text-sm font-mono">{testimonial.role}</p>
+                                            {/* <p className="text-cyan-400 text-sm font-mono">{testimonial.role}</p> */}
                                         </div>
                                     </div>
 
-                                    <div className="flex items-center space-x-1 mb-4">
+                                    {/* <div className="flex items-center space-x-1 mb-4">
                                         {[...Array(testimonial.rating)].map((_, i) => (
                                             <Star key={i} className="w-5 h-5 text-yellow-400 fill-yellow-400" />
                                         ))}
-                                    </div>
+                                    </div> */}
 
                                     {/* Content: Text, Image, or Video */}
                                     {testimonial.text && (
-                                        <TruncatedText text={testimonial.text} maxWords={50} />
+                                        <TruncatedText text={testimonial.text} maxWords={50} bold={index < 3} />
                                     )}
 
-                                    {testimonial.imageUrl && (
-                                        <div className="rounded-lg overflow-hidden border border-cyan-400/30 mx-auto max-w-xs">
-                                            <img
-                                                src={testimonial.imageUrl}
-                                                alt={`Testimonial from ${testimonial.name}`}
-                                                className="w-full h-auto object-cover"
-                                                // style={{ aspectRatio: '9/16' }}
+                                    {(testimonial.imageUrl || testimonial.imageUrls) && (
+                                        testimonial.imageUrls && testimonial.imageUrls.length > 0 ? (
+                                            <ImageSlider 
+                                                images={testimonial.imageUrls} 
+                                                altText={`Testimonial from ${testimonial.name}`}
                                             />
-                                        </div>
+                                        ) : testimonial.imageUrl ? (
+                                            <div className="rounded-lg overflow-hidden border border-cyan-400/30 mx-auto max-w-xs">
+                                                <img
+                                                    src={testimonial.imageUrl}
+                                                    alt={`Testimonial from ${testimonial.name}`}
+                                                    className="w-full h-auto object-cover"
+                                                />
+                                            </div>
+                                        ) : null
                                     )}
 
                                     {testimonial.videoUrl && (
