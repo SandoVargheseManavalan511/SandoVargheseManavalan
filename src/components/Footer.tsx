@@ -58,7 +58,7 @@ export default function Footer() {
             <h3 className="text-white font-bold mb-4">Connect</h3>
             <div className="flex flex-wrap gap-3">
               <a
-                href="https://www.instagram.com/_gully_boy_511?igsh=bnBocWZhZ213dDl6&utm_source=qr_code"
+                href="https://www.instagram.com/cyber_expert_sando?igsh=bnBocWZhZ213dDl6&utm_source=qr"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-10 h-10 flex items-center justify-center rounded-full bg-gray-800 border border-gray-700 hover:border-pink-400 hover:bg-pink-400/10 text-gray-400 hover:text-pink-400 transition-all"
