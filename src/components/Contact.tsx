@@ -101,10 +101,10 @@ export default function Contact() {
                   <div>
                     <h4 className="text-white font-semibold mb-1">Instagram</h4>
                     <a
-                      href="https://www.instagram.com/_gully_boy_511?igsh=bnBocWZhZ213dDl6&utm_source=qr"
+                      href="https://www.instagram.com/cyber_expert_sando?igsh=bnBocWZhZ213dDl6&utm_source=qr"
                       className="text-cyan-400 hover:text-cyan-300 transition-colors font-mono"
                     >
-                      gully_boy_511
+                      cyber_expert_sando
                     </a>
                   </div>
                 </div>
@@ -162,7 +162,7 @@ export default function Contact() {
             </div>
 
             <a
-              href="https://www.instagram.com/_gully_boy_511?igsh=bnBocWZhZ213dDl6&utm_source=qr"
+              href="https://www.instagram.com/cyber_expert_sando?igsh=bnBocWZhZ213dDl6&utm_source=qr"
               className="block w-full px-8 py-6 bg-gradient-to-r from-green-500 to-emerald-600 text-white font-bold rounded-xl text-center hover:shadow-2xl hover:shadow-green-500/50 transition-all duration-300 transform hover:scale-105 neon-border-green text-xl"
             >
               <Instagram className="w-6 h-6 inline-block mr-3" />
